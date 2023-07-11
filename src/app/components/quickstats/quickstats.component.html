@@ -1,0 +1,36 @@
+<p>quickstats works!</p>
+
+<!-- DEFENSIVE CR -->
+<div>
+    <label for="HP">HP: </label>
+    <input id="HP" [(ngModel)]="stats.HP" placeholder="HP">
+<br>
+    <label for="AC">AC: </label>
+    <input id="AC" [(ngModel)]="stats.AC" placeholder="AC">
+
+<!-- OFFENSIVE CR -->
+<br>
+    <label for="DmgRnd">DR: </label>
+    <input id="DmgRnd" [(ngModel)]="stats.DmgRnd" placeholder="DmgRnd">
+    <br>
+    <label for="Atk">Atk: </label>
+    <input id="Atk" [(ngModel)]="stats.Atk" placeholder="Atk">
+    <br>
+    <button type="button" class="process" title="calculate"
+(click)="process()">calc</button>
+
+
+<!-- FINAL CR -->
+<p style="margin-left: 25px;">
+<label for="CR">CR: </label>
+{{stats.CR}}
+<!-- <input id="CR" [ngModel]="stats.CR" placeholder="CR"> -->
+</p>
+</div>
+
+
+
+<div>
+    {{beeped}}
+    <button type="button" (click)="beep()">beep</button>
+</div>
