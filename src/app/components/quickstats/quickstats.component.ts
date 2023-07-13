@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuickStatblock } from 'src/app/models/quick-statblock.model';
+import { QuickStatblock } from 'src/app/models/quickstatblock';
 import { QuickStatsService } from 'src/app/services/quick-stats.service';
 
 @Component({
@@ -12,13 +12,13 @@ export class QuickstatsComponent {
   constructor(private quickStatService:QuickStatsService){}
 
 stats:QuickStatblock = {
-  // CR: 0,
+  CR: 0,
   HP: 0,
   AC: 0,
-  // DefCR: 0,
+  DefCR: 0,
   DmgRnd: 0,
   Atk: 0,
-  // OffCR: 0,
+  OffCR: 0,
 };
 beeped:number = 0;
 
@@ -28,7 +28,7 @@ process(): void{
 }
 
 beep(): void{
-  this.quickStatService.beep()
+  this.quickStatService.beep(this.beeped)
     .subscribe(boop => this.beeped = boop);
 }
 

@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { QuickStatblock } from '../models/quick-statblock.model';
+import { QuickStatblock } from '../models/quickstatblock';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class QuickStatsService {
     return this.http.post<QuickStatblock>(`${this.authUrl}/process`, statValues, this.httpOptions);
   }
 
-  beep(): Observable<number>{
-    return this.http.post<number>(`${this.authUrl}/beep`, this.httpOptions);
+  beep(beeped:number): Observable<number>{
+    return this.http.post<number>(`${this.authUrl}/beep`, beeped, this.httpOptions);
   }
 }
