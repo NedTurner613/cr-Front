@@ -11,7 +11,8 @@ export class GimmegimmeComponent {
 
   man:GimmeMan = {
     input: 0,
-    result: 0
+    result: 0,
+    blarf: 10,
   };
 
 

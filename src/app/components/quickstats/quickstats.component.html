@@ -3,18 +3,33 @@
 <!-- DEFENSIVE CR -->
 <div>
     <label for="HP">HP: </label>
-    <input id="HP" [(ngModel)]="stats.HP" placeholder="HP">
+    <input id="HP" [(ngModel)]="stats.hp" placeholder="HP">
 <br>
     <label for="AC">AC: </label>
-    <input id="AC" [(ngModel)]="stats.AC" placeholder="AC">
+    <input id="AC" [(ngModel)]="stats.ac" placeholder="AC">
+    <br>
+    <label for="Defensive CR">Defensive CR: </label>
+    {{stats.defCR}}
+    <br>
 
 <!-- OFFENSIVE CR -->
 <br>
     <label for="DmgRnd">DR: </label>
-    <input id="DmgRnd" [(ngModel)]="stats.DmgRnd" placeholder="DmgRnd">
+    <input id="DmgRnd" [(ngModel)]="stats.dmgRnd" placeholder="DmgRnd">
     <br>
     <label for="Atk">Atk: </label>
-    <input id="Atk" [(ngModel)]="stats.Atk" placeholder="Atk">
+    <input id="Atk" [(ngModel)]="stats.atk" placeholder="Atk">
+    <br>
+    <label for="DC">DC: </label>
+    <input id="DC" [(ngModel)]="stats.dc" placeholder="DC">
+    <input id="Set using DC" type="checkbox" [(ngModel)]="stats.atkVsDc"[ngModelOptions]="{standalone: true}">
+    <br>
+    <label for="Offensive CR">Offensive CR: </label>
+    {{stats.offCR}}
+    <br>
+
+
+
     <br>
     <button type="button" class="process" title="calculate"
 (click)="process()">calc</button>
@@ -23,14 +38,14 @@
 <!-- FINAL CR -->
 <p style="margin-left: 25px;">
 <label for="CR">CR: </label>
-{{stats.CR}}
+{{stats.cr}}
 <!-- <input id="CR" [ngModel]="stats.CR" placeholder="CR"> -->
 </p>
 </div>
 
 
 
-<div>
-    {{beeped}}
+<!-- <div>
+    {{beeped.forst}}
     <button type="button" (click)="beep()">beep</button>
-</div>
+</div> -->

@@ -3,7 +3,11 @@
 <div>
 <label for="value"></label>
 <input id="value" [(ngModel)]="man.input" placeholder="value">
-<p></p><label for="gotten">{{man.result}}</label>
+<br>
+<label for="gotten">{{man.result}}</label>
+<br>
+{{man.blarf}}
+
 <button type="button" class="process" title="calculate"
 (click)="process()">calc</button>
 </div>

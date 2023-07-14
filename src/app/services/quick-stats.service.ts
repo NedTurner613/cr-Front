@@ -4,6 +4,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { QuickStatblock } from '../models/quickstatblock';
+import { Boop } from '../models/boop';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +20,11 @@ export class QuickStatsService {
   };
 
   process(statValues:QuickStatblock): Observable<QuickStatblock>{
+    // console.log("Service CR: " + statValues.CR);
     return this.http.post<QuickStatblock>(`${this.authUrl}/process`, statValues, this.httpOptions);
   }
 
-  beep(beeped:number): Observable<number>{
-    return this.http.post<number>(`${this.authUrl}/beep`, beeped, this.httpOptions);
+  beep(beeped:Boop): Observable<Boop>{
+    return this.http.post<Boop>(`${this.authUrl}/beep`, beeped, this.httpOptions);
   }
 }

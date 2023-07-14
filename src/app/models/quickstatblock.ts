@@ -1,9 +1,14 @@
 export interface QuickStatblock {
-    CR?: number;
-    HP: number;
-    AC: number;
-    DefCR?: number;
-    DmgRnd: number;
-    Atk: number;
-    OffCR?: number;
+    cr?: number;
+
+    hp: number;
+    ac: number;
+    defCR?: number;
+
+    dmgRnd: number;
+    atk: number;
+    dc?: number;
+    // if false use atk, if true use dc
+    atkVsDc: boolean;
+    offCR?: number;
 }
